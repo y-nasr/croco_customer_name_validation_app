@@ -1,0 +1,11 @@
+include MANIFEST.in
+include *.md
+include *.txt
+recursive-include customer_name_validation *.css
+recursive-include customer_name_validation *.html
+recursive-include customer_name_validation *.js
+recursive-include customer_name_validation *.json
+recursive-include customer_name_validation *.md
+recursive-include customer_name_validation *.py
+recursive-include customer_name_validation *.txt
+recursive-exclude customer_name_validation *.pyc
