@@ -8,10 +8,10 @@ app_license = "MIT"
 # Marketplace metadata — used by Frappe Cloud's marketplace listing and by
 # the desk's "About this App" dialog.
 app_logo_url = "/assets/customer_name_validation/images/logo.png"
-source_link = "https://github.com/CrocoIT/customer_name_validation"
-app_license_link = "https://github.com/CrocoIT/customer_name_validation/blob/main/license.txt"
+source_link = "https://github.com/y-nasr/croco_customer_name_validation_app"
+app_license_link = "https://github.com/y-nasr/croco_customer_name_validation_app/blob/main/license.txt"
 website_url = "https://crocoit.com"
-documentation_url = "https://github.com/CrocoIT/customer_name_validation#readme"
+documentation_url = "https://github.com/y-nasr/croco_customer_name_validation_app#readme"
 support_url = "mailto:info@crocoit.com"
 
 

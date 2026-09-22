@@ -37,7 +37,7 @@ Examples:
 ## Install
 
 ```bash
-bench get-app https://github.com/CrocoIT/customer_name_validation
+bench get-app https://github.com/y-nasr/croco_customer_name_validation_app
 bench --site <site> install-app customer_name_validation
 bench build --app customer_name_validation
 bench restart

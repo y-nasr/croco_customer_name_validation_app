@@ -24,4 +24,4 @@ This project loosely follows [Semantic Versioning](https://semver.org/spec/v2.0.
 - Standalone app — depends only on Frappe ≥ 15 and ERPNext ≥ 15. No custom
   fields, no external Python packages.
 
-[0.1.0]: https://github.com/CrocoIT/customer_name_validation/releases/tag/v0.1.0
+[0.1.0]: https://github.com/y-nasr/croco_customer_name_validation_app/releases/tag/v0.1.0
