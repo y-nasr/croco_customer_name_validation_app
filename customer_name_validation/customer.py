@@ -61,9 +61,9 @@ def set_customer_name_validation_status(enabled):
 # ─── Validation ──────────────────────────────────────────────────────────────
 # A valid Customer name:
 #   - starts with a letter (any Unicode script: Latin, Arabic, etc.);
-#   - contains only letters and the separators below;
-#   - has no digits, no other symbols, and no leading/trailing whitespace.
-_ALLOWED_SEPARATORS = frozenset({" ", "-", "'", "’", "."})
+#   - contains only letters and spaces between words;
+#   - has no digits, no special characters, and no leading/trailing whitespace.
+_ALLOWED_SEPARATORS = frozenset({" "})
 
 
 def _validate_name(name):
@@ -89,7 +89,7 @@ def _validate_name(name):
         frappe.throw(
             _(
                 "Customer Name {0} contains an invalid character {1}. "
-                "Only letters, spaces, hyphens ( - ), apostrophes ( ' ) and periods ( . ) are allowed."
+                "Only letters and spaces between words are allowed."
             ).format(frappe.bold(name), frappe.bold(repr(ch))),
             frappe.ValidationError,
         )

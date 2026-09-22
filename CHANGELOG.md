@@ -10,8 +10,8 @@ This project loosely follows [Semantic Versioning](https://semver.org/spec/v2.0.
 - **Server-side validation** of `Customer.customer_name` on every save
   (add and edit), covering both the quick-entry dialog and the full form.
   A valid name starts with a letter (any Unicode script) and contains only
-  letters plus spaces, hyphens, apostrophes (straight or curly), and
-  periods — no digits, no other symbols, and no leading/trailing spaces.
+  letters and spaces between words — no digits, no special characters, and
+  no leading/trailing spaces.
 - **Client-side full-form validator** that mirrors the server rule for
   instant feedback before the round-trip.
 - **Administrator-only feature flag** with a real-time toggle in the

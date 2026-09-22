@@ -6,9 +6,9 @@ A valid customer name:
 
 - **Starts with a letter** — any Unicode script (Latin, Arabic, etc.). No
   leading space, digit, or symbol.
-- Contains **only letters and these separators**: space, hyphen `-`,
-  apostrophe `'` (straight or curly `’`), and period `.`
-- Has **no digits**, **no other symbols**, and **no leading/trailing spaces**.
+- Contains **only letters and spaces** between words.
+- Has **no digits**, **no special characters**, and **no leading/trailing
+  spaces**.
 
 Examples:
 
@@ -16,9 +16,9 @@ Examples:
 |---|---|
 | `Mohamed Osama` | ✅ |
 | `محمد اسامة` | ✅ (Arabic letters + space) |
-| `Al-Sayed` | ✅ (hyphen) |
-| `O'Brien` | ✅ (apostrophe) |
-| `St. John` | ✅ (period) |
+| `Al-Sayed` | ❌ hyphen |
+| `O'Brien` | ❌ apostrophe |
+| `St. John` | ❌ period |
 | ` Mohamed` | ❌ leading space |
 | `Ahmed123` | ❌ digit |
 | `Ahmed*` | ❌ symbol |

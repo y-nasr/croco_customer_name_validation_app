@@ -7,10 +7,9 @@ function customer_name_validation_enabled() {
 	return !(frappe.boot && frappe.boot.customer_name_validation_enabled === false);
 }
 
-// A valid name: starts with a Unicode letter, then only letters + space,
-// hyphen, apostrophe (straight or curly), or period. No digits, no leading
-// or trailing whitespace, no other symbols.
-var CMV_NAME_RE = /^\p{L}[\p{L} '’.\-]*$/u;
+// A valid name: starts with a Unicode letter, then only letters and spaces
+// between words. No digits, no special characters, no leading/trailing space.
+var CMV_NAME_RE = /^\p{L}[\p{L} ]*$/u;
 
 function _cmv_name_error(name) {
 	if (!name) return null; // required-ness is ERPNext's concern
@@ -21,7 +20,7 @@ function _cmv_name_error(name) {
 		return __("Customer Name must start with a letter.");
 	}
 	if (!CMV_NAME_RE.test(name)) {
-		return __("Customer Name may contain only letters, spaces, hyphens ( - ), apostrophes ( ' ) and periods ( . ).");
+		return __("Customer Name may contain only letters and spaces between words.");
 	}
 	return null;
 }
