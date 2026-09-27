@@ -66,33 +66,27 @@ def set_customer_name_validation_status(enabled):
 _ALLOWED_SEPARATORS = frozenset({" "})
 
 
+# Every rejection raises the exact same message, by request.
+_ERROR_MESSAGE = "customer name accepts letters only"
+
+
 def _validate_name(name):
     if not name:
         # Required-ness is ERPNext's own concern; we only validate content.
         return
 
+    # Leading/trailing space, must-start-with-letter, and any invalid character
+    # all raise the same single message.
     if name != name.strip():
-        frappe.throw(
-            _("Customer Name {0} must not start or end with a space.").format(frappe.bold(name)),
-            frappe.ValidationError,
-        )
+        frappe.throw(_(_ERROR_MESSAGE), frappe.ValidationError)
 
     if not name[0].isalpha():
-        frappe.throw(
-            _("Customer Name {0} must start with a letter.").format(frappe.bold(name)),
-            frappe.ValidationError,
-        )
+        frappe.throw(_(_ERROR_MESSAGE), frappe.ValidationError)
 
     for ch in name:
         if ch.isalpha() or ch in _ALLOWED_SEPARATORS:
             continue
-        frappe.throw(
-            _(
-                "Customer Name {0} contains an invalid character {1}. "
-                "Only letters and spaces between words are allowed."
-            ).format(frappe.bold(name), frappe.bold(repr(ch))),
-            frappe.ValidationError,
-        )
+        frappe.throw(_(_ERROR_MESSAGE), frappe.ValidationError)
 
 
 def validate_customer_name(doc, method):

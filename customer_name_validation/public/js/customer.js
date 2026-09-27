@@ -11,16 +11,13 @@ function customer_name_validation_enabled() {
 // between words. No digits, no special characters, no leading/trailing space.
 var CMV_NAME_RE = /^\p{L}[\p{L} ]*$/u;
 
+// Every rejection returns the exact same message, by request.
+var CMV_ERROR_MESSAGE = "customer name accepts letters only";
+
 function _cmv_name_error(name) {
 	if (!name) return null; // required-ness is ERPNext's concern
-	if (name !== name.trim()) {
-		return __("Customer Name must not start or end with a space.");
-	}
-	if (!/^\p{L}/u.test(name)) {
-		return __("Customer Name must start with a letter.");
-	}
-	if (!CMV_NAME_RE.test(name)) {
-		return __("Customer Name may contain only letters and spaces between words.");
+	if (name !== name.trim() || !/^\p{L}/u.test(name) || !CMV_NAME_RE.test(name)) {
+		return __(CMV_ERROR_MESSAGE);
 	}
 	return null;
 }
